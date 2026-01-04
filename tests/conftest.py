@@ -12,7 +12,7 @@ import allure_commons
 load_dotenv()
 
 # 2. Беру context
-context = os.getenv("context")
+context = os.getenv("CONTEXT")
 if not context:
     raise RuntimeError("context is not set")
 
