@@ -34,17 +34,19 @@ pluggy = ">=0.4.0"
 
 [[package]]
 name = "appium-python-client"
-version = "2.11.1"
+version = "5.2.4"
 description = "Python client for Appium"
 optional = false
-python-versions = "*"
+python-versions = ">=3.9"
 groups = ["main"]
 files = [
-    {file = "Appium-Python-Client-2.11.1.tar.gz", hash = "sha256:0e9d3a76f03217add68a9389d5630a7b63355a6bd5ba70711c47ed3463908d33"},
+    {file = "appium_python_client-5.2.4-py3-none-any.whl", hash = "sha256:1c8ccdc1b6e5c88e9835f4d81d338cae574e74114a85d5ffaa049d9b0fb4c32a"},
+    {file = "appium_python_client-5.2.4.tar.gz", hash = "sha256:eafeee9ff1ad8ac3052d2f706dca5cb52ebf51b5335f1f7102c71a663ee18c13"},
 ]
 
 [package.dependencies]
-selenium = ">=4.1,<5.0"
+selenium = ">=4.26,<5.0"
+typing-extensions = ">=4.13,<5.0"
 
 [[package]]
 name = "attrs"
@@ -57,22 +59,6 @@ files = [
     {file = "attrs-25.4.0-py3-none-any.whl", hash = "sha256:adcf7e2a1fb3b36ac48d97835bb6d8ade15b8dcce26aba8bf1d14847b57a3373"},
     {file = "attrs-25.4.0.tar.gz", hash = "sha256:16d5969b87f0859ef33a48b35d55ac1be6e42ae49d5e853b597db70c35c57e11"},
 ]
-
-[[package]]
-name = "backports-functools-lru-cache"
-version = "2.0.0"
-description = "Backport of functools.lru_cache"
-optional = false
-python-versions = ">=3.8"
-groups = ["main"]
-files = [
-    {file = "backports.functools_lru_cache-2.0.0-py2.py3-none-any.whl", hash = "sha256:0a754323a46847735a112677fb8807b45f6d824d02a5795a50905218ac56a0d6"},
-    {file = "backports.functools_lru_cache-2.0.0.tar.gz", hash = "sha256:dcbfa5e0dae8a014168807c9e026d33eead71df5af76c1fb78fd248bf07f6f99"},
-]
-
-[package.extras]
-docs = ["furo", "jaraco.packaging (>=9.3)", "jaraco.tidelift (>=1.4)", "rst.linker (>=1.9)", "sphinx (<7.2.5)", "sphinx (>=3.5)", "sphinx-lint"]
-testing = ["pytest (>=6)", "pytest-black (>=0.3.7) ; platform_python_implementation != \"PyPy\"", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-mypy (>=0.9.1) ; platform_python_implementation != \"PyPy\"", "pytest-ruff"]
 
 [[package]]
 name = "certifi"
@@ -500,51 +486,40 @@ use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
 name = "selene"
-version = "1.0.2"
-description = "Concise API for selenium in Python + Ajax support + PageObjects (Selenide port from Java to Python)"
+version = "2.0.0rc9"
+description = "User-oriented browser tests in Python (Selenide port)"
 optional = false
-python-versions = "*"
+python-versions = ">=3.8,<4.0"
 groups = ["main"]
 files = [
-    {file = "selene-1.0.2-py3-none-any.whl", hash = "sha256:672cdb35b33560d2ec0f1b6a686f09f40d6f56b787d327965bd05777b5f15f79"},
+    {file = "selene-2.0.0rc9-py3-none-any.whl", hash = "sha256:f53e7b20c66f7605dc29919f07b72c14e17d9bec881511942156b746889c7cce"},
+    {file = "selene-2.0.0rc9.tar.gz", hash = "sha256:3dc4ecb17d72c56bcc5c09a0c2cbbd88d741af3dd1359930d6de26edd663572c"},
 ]
 
 [package.dependencies]
-"backports.functools-lru-cache" = "*"
 future = "*"
-selenium = "*"
-six = "*"
-webdriver-manager = "*"
+selenium = ">=4.12.0"
+typing-extensions = ">=4.9.0"
 
 [[package]]
 name = "selenium"
-version = "4.9.1"
-description = ""
+version = "4.39.0"
+description = "Official Python bindings for Selenium WebDriver"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.10"
 groups = ["main"]
 files = [
-    {file = "selenium-4.9.1-py3-none-any.whl", hash = "sha256:82aedaa85d55bc861f4c89ff9609e82f6c958e2e1e3da3ffcc36703f21d3ee16"},
-    {file = "selenium-4.9.1.tar.gz", hash = "sha256:3444f4376321530c36ce8355b6b357d8cf4a7d588ce5cf772183465930bbed0e"},
+    {file = "selenium-4.39.0-py3-none-any.whl", hash = "sha256:c85f65d5610642ca0f47dae9d5cc117cd9e831f74038bc09fe1af126288200f9"},
+    {file = "selenium-4.39.0.tar.gz", hash = "sha256:12f3325f02d43b6c24030fc9602b34a3c6865abbb1db9406641d13d108aa1889"},
 ]
 
 [package.dependencies]
-certifi = ">=2021.10.8"
-trio = ">=0.17,<1.0"
-trio-websocket = ">=0.9,<1.0"
-urllib3 = {version = ">=1.26,<3", extras = ["socks"]}
-
-[[package]]
-name = "six"
-version = "1.17.0"
-description = "Python 2 and 3 compatibility utilities"
-optional = false
-python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
-groups = ["main"]
-files = [
-    {file = "six-1.17.0-py2.py3-none-any.whl", hash = "sha256:4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274"},
-    {file = "six-1.17.0.tar.gz", hash = "sha256:ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"},
-]
+certifi = ">=2025.10.5"
+trio = ">=0.31.0,<1.0"
+trio-websocket = ">=0.12.2,<1.0"
+typing_extensions = ">=4.15.0,<5.0"
+urllib3 = {version = ">=2.5.0,<3.0", extras = ["socks"]}
+websocket-client = ">=1.8.0,<2.0"
 
 [[package]]
 name = "sniffio"
@@ -608,6 +583,18 @@ trio = ">=0.11"
 wsproto = ">=0.14"
 
 [[package]]
+name = "typing-extensions"
+version = "4.15.0"
+description = "Backported and Experimental Type Hints for Python 3.9+"
+optional = false
+python-versions = ">=3.9"
+groups = ["main"]
+files = [
+    {file = "typing_extensions-4.15.0-py3-none-any.whl", hash = "sha256:f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548"},
+    {file = "typing_extensions-4.15.0.tar.gz", hash = "sha256:0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"},
+]
+
+[[package]]
 name = "urllib3"
 version = "2.6.2"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
@@ -629,21 +616,21 @@ socks = ["pysocks (>=1.5.6,!=1.5.7,<2.0)"]
 zstd = ["backports-zstd (>=1.0.0) ; python_version < \"3.14\""]
 
 [[package]]
-name = "webdriver-manager"
-version = "4.0.2"
-description = "Library provides the way to automatically manage drivers for different browsers"
+name = "websocket-client"
+version = "1.9.0"
+description = "WebSocket client for Python with low level API options"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.9"
 groups = ["main"]
 files = [
-    {file = "webdriver_manager-4.0.2-py2.py3-none-any.whl", hash = "sha256:75908d92ecc45ff2b9953614459c633db8f9aa1ff30181cefe8696e312908129"},
-    {file = "webdriver_manager-4.0.2.tar.gz", hash = "sha256:efedf428f92fd6d5c924a0d054e6d1322dd77aab790e834ee767af392b35590f"},
+    {file = "websocket_client-1.9.0-py3-none-any.whl", hash = "sha256:af248a825037ef591efbf6ed20cc5faa03d3b47b9e5a2230a529eeee1c1fc3ef"},
+    {file = "websocket_client-1.9.0.tar.gz", hash = "sha256:9e813624b6eb619999a97dc7958469217c3176312b3a16a4bd1bc7e08a46ec98"},
 ]
 
-[package.dependencies]
-packaging = "*"
-python-dotenv = "*"
-requests = "*"
+[package.extras]
+docs = ["Sphinx (>=6.0)", "myst-parser (>=2.0.0)", "sphinx_rtd_theme (>=1.1.0)"]
+optional = ["python-socks", "wsaccel"]
+test = ["pytest", "websockets"]
 
 [[package]]
 name = "wsproto"
@@ -662,5 +649,5 @@ h11 = ">=0.16.0,<1"
 
 [metadata]
 lock-version = "2.1"
-python-versions = ">=3.13"
-content-hash = "b49a94b5460696b4aec967d1cdb22520ec0704aee47c4dde25fc0206d5d766a1"
+python-versions = ">=3.13,<4.0"
+content-hash = "12e86f8087a3bf54018bc7e0bdb3cef44b209a5b9d9c16c748c4e8004b4a9c07"
