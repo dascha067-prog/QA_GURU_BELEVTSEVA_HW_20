@@ -2,7 +2,7 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
-    context: str = "emulator"
+    context: str
     timeout: float = 10.0
 
     platformName: str | None = None
